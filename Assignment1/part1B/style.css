@@ -1,0 +1,81 @@
+html,body{
+    background-color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+header{
+    text-align: center;
+    background-color: orange;
+    display: flex;
+    flex: 10%;
+    height: 10vh;
+    text-shadow: 1px -1px lightgray;
+    padding-left: 43%;
+    margin: -10px;
+}
+footer{
+    background-color: orange;
+    height: 5vh;
+}
+.footer-text{
+    padding-top: 7px;
+    text-align: center;
+}
+main{
+    margin: -7px;
+    height: 82vh;
+}
+.container{
+    padding: 5px;
+    margin: 5px;
+}
+.navbar{
+    background-color: wheat;
+}
+.nav-list{
+    display: flex;
+    padding: 10px;
+}
+li{
+    padding-left: 12%;
+    list-style: none;
+}
+.a-back{
+    margin-top: -15px;
+    font-size: 16px;
+    text-align: end;
+    padding-right: 5px;
+}
+label{
+    color: aliceblue;
+}
+.songs{
+    padding-top: 9px;
+}
+.text-class{
+    color: rgb(251, 180, 48);
+    font-size: 20px;
+}
+.btn-book{
+    background-color: rgb(251, 180, 48);
+    height: 40px;
+    width: 120px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p{
+    color: white;
+}
+.img-guitar{
+    height: 250px;
+    width: 600px;
+}
+.img-basic{
+    height: 350px;
+    width: 700px;
+}
+.ol-packages{
+    color: aliceblue;
+    font-size: larger;
+}
