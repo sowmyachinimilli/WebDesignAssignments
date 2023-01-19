@@ -1,3 +1,6 @@
+Name: Satya Sri Sowmya Chinimilli
+NUID: 002102974
+
 # Part1A - Baskin Robbins
 
 Baskin Robbins is icecream vendor website, which has the menu and registration part to order the icecreams. There are two html pages - index.html and register.html. The css/styling for this website is in BRstyle.css which is linked in both the html pages.
