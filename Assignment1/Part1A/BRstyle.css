@@ -1,0 +1,76 @@
+header{
+    text-align: center;
+    background-color: #e21380;
+    color: rgb(0, 28, 152);
+    display: flex;
+    flex: 10%;
+    height: 15;
+    text-shadow: 1px -1px lightgray;
+    padding-left: 43%;
+    margin: -10px;
+}
+.gallery-container{
+    margin-top: 20px;
+}
+h2{
+    font-weight: bold;
+    text-shadow: 1px 1px 1px grey;
+    padding-left: 20px;
+}
+.gallery{
+    padding: 20px;
+    margin: 20px;
+}
+.gallery img{
+    width: 300px;
+    height: 200px;
+}
+.gallery:hover{
+    cursor: pointer;
+    box-shadow: 9px 9px rgb(72, 86, 152);
+    border: 1px solid #e21380;
+}
+a:hover{
+    color: #e21380;
+}
+a:visited{
+    color: purple;
+}
+.text-pink{
+    color: #e21380;
+}
+.text-blue{
+    color: rgb(0, 28, 152);
+}
+.btn-register,.btn-activation{
+    background-color: #e21380;
+    color: white;
+    font-weight: bold;
+    height: 30px;
+}
+.btn-activation{
+    margin-left: 5px;
+}
+.btn-register:hover,.btn-activation:hover{
+    box-shadow: 2px 2px rgb(114, 121, 152);
+}
+.register-section{
+    float: right;
+    margin: 15px;
+    padding: 15px;
+}
+.register-form{
+    font-size: 20px;
+}
+.txt-email{
+    width: 350px;
+    height: 30px;
+    border: 2px solid #e21380;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.activation-form{
+    margin: 70px;
+    padding: 10%;
+    padding-left: 25%;
+}
