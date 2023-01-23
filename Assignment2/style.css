@@ -1,11 +1,37 @@
 body{
-    background-color: black;
-    color: white;
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   /* color: #545b64; */
+}
+header{
+    background-color: #232f3e;
+    height: 6vh;
+    color: whitesmoke;
+    display: flex;
+}
+header h3{
+    text-align: center;
+}
+.header-title{
+    padding-left: 39%;
+}
+.header-contact{
+    padding-top: 12px;
+    padding-left: 30%;
+}
+header a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding-right: 45px;
+    font-size: 20px;
+}
+header a:hover{
+    color:#ec7211;
 }
 main{
     margin-left: 160px;
-    padding: 10px;
-    height: 710px;
+    padding: 25px;
+    height: 695px;
     overflow: auto;
 }
 nav{
@@ -13,6 +39,8 @@ nav{
     width: 150px;
     padding: 10px;
     position: fixed;
+    border:1px solid #545b64;
+    height: 720px;
 }
 ul li{
     list-style: none;
@@ -20,27 +48,23 @@ ul li{
     margin-top: 10px;
 }
 li a{
-    color: skyblue;
+    color: #545b64;
+    text-decoration: none;
 }
 li a:hover{
-    color: bisque;
-}
-li a:visited{
-    color: darkorchid;
+    color: #ec7211;
 }
 footer{
     text-align: center;
     font-style:italic;
-    background-color: #0095ff;
-    padding: 2px;
-}
-footer p{
-    text-align: center;
-    color: black;
+    background-color: #232f3e;
+    color: whitesmoke;
+    height: 3vh;
 }
 .column{
     float: left;
     width: 33%;
+    margin: 10px;
   }
   #card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -61,5 +85,29 @@ footer p{
     width: 25%;
   }
   .certname{
-    color: peru;
+    color: #ec7211;
+  }
+  form input,textarea{
+    padding: 5px;
+    margin: 10px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid #345;
+    border-radius: 3px;
+  }
+  textarea{
+    width: 600px;
+  }
+  .right-panel h3{
+    padding-left:10px;
+  }
+  .btn-submit{
+    background-color: #ec7211;
+    color: whitesmoke;
+    font-weight: bold;
+    border: 2px solid #ed6c03;
+  }
+  .btn-submit:hover{
+    opacity: 0.8;
+    background: #ec7211;
   }
