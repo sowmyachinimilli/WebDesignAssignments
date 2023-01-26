@@ -2,10 +2,11 @@ body{
     background-color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
    /* color: #545b64; */
+   margin: 0;
 }
 header{
     background-color: #232f3e;
-    height: 6vh;
+    height: 10vh;
     color: whitesmoke;
     display: flex;
 }
@@ -13,10 +14,11 @@ header h3{
     text-align: center;
 }
 .header-title{
-    padding-left: 39%;
+    padding-top: 10px;
+    padding-left: 37%;
 }
 .header-contact{
-    padding-top: 12px;
+    padding-top: 20px;
     padding-left: 30%;
 }
 header a{
@@ -31,27 +33,30 @@ header a:hover{
 main{
     margin-left: 160px;
     padding: 25px;
-    height: 695px;
+    height: 656px;
     overflow: auto;
 }
 nav{
     float:left;
     width: 150px;
-    padding: 10px;
+    padding: 15px;
     position: fixed;
     border:1px solid #545b64;
-    height: 720px;
+    height: 678px;
+}
+nav ul{
+    padding: 0;
 }
 ul li{
     list-style: none;
     font-family: Verdana, Arial, sans-serif;
     margin-top: 10px;
 }
-li a{
+nav a{
     color: #545b64;
     text-decoration: none;
 }
-li a:hover{
+nav a:hover{
     color: #ec7211;
 }
 footer{
@@ -59,7 +64,8 @@ footer{
     font-style:italic;
     background-color: #232f3e;
     color: whitesmoke;
-    height: 3vh;
+    height: 4vh;
+    padding-top: 5px;
 }
 .column{
     float: left;
@@ -73,8 +79,8 @@ footer{
   }
   #card img 
   {
-     width:100%;
-     height: 250px;
+     width:80%;
+     height: 200px;
   }
   #card img:hover
   {
@@ -110,4 +116,123 @@ footer{
   .btn-submit:hover{
     opacity: 0.8;
     background: #ec7211;
+  }
+  main p{
+    padding-left: 25px;
+    padding-right: 20%;
+    font-size: 20px;
+    color: #545b64;
+  }
+  main h1{
+    padding-left: 25px;
+    padding-right: 20%;
+  }
+  .profilepic{
+    margin-top: -135px;
+    float: right; 
+    margin-right: 50px;
+    width: 125px;
+    border:2px solid #545b64;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  .linkedin{
+    clear: right;
+  }
+  .edu b,i{
+    padding: 5px;
+  }
+  h2{
+    padding-left: 10px;
+  }
+  table{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-left: 25px;
+  }
+  table,th,tr,td{
+    border: 2px solid #ec7211;
+    border-collapse: collapse;
+  }
+  .colskills{
+    padding: 10px;
+    color: #545b64;
+  }
+  main form{
+    padding-left:25px;
+  }
+  .home h1,b{
+    padding-left:25px;
+    color: #545b64;
+  }
+  .intro{
+    color: #545b64;
+  }
+ h1:hover{
+    color:#ec7211;
+ }
+ .btn-contact{
+    height: 40px;
+    width: 125px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #ec7211;
+    color: whitesmoke;
+ }
+ .btn-contact:hover{
+    opacity: 0.8;
+    background: #ec7211;
+  }
+  /*media queries css*/
+
+/* On screens that are 768px or less */
+@media screen and (max-width: 769px) {
+    .left-panel{
+      width: 20%;
+    }
+    .right-panel{
+      width: 80%;
+      margin-left: 20%;
+      height: 100vh;
+      padding: 10px 50px;
+    }
+    main{
+        font-size: 24px;
+    }
+    .card-img{
+      width: 50%;
+    }
+  }
+  @media (max-width:301px){
+      .left-panel{
+      width: 35%;
+  
+    }
+    .right-panel{
+      width: 65%;
+      margin-left: 35%;
+    }
+    main{
+      font-size: 24px;
+    }
+    .column{
+      float: left;
+      width: 100%;
+    }
+  }
+  @media (max-width:499px){
+    .left-panel{
+      width: 30%;
+    }
+    .right-panel{
+      width: 70%;
+      margin-left: 30%;
+      padding: 10px;
+      height: 160vh;
+    }
+    p{
+      font-size: 24px;
+    }
+    .column {
+      float: left;
+      width: 100%;
+    }
   }
