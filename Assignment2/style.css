@@ -1,7 +1,6 @@
 body{
     background-color: whitesmoke;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-   /* color: #545b64; */
    margin: 0;
 }
 header{
@@ -33,16 +32,17 @@ header a:hover{
 main{
     margin-left: 160px;
     padding: 25px;
-    height: 640px;
+    height: 651px;
     overflow: auto;
 }
 nav{
     float:left;
     width: 150px;
-    padding: 15px;
     position: fixed;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border:1px solid #545b64;
-    height: 659px;
+    height: 670px;
 }
 nav ul{
     padding: 0;
@@ -50,7 +50,10 @@ nav ul{
 ul li{
     list-style: none;
     font-family: Verdana, Arial, sans-serif;
-    margin-top: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
 }
 nav a{
     color: #545b64;
@@ -59,6 +62,7 @@ nav a{
 nav a:hover,li:hover{
     background-color: #ec7211;
     color: whitesmoke;
+    overflow: auto;
 }
 footer{
     text-align: center;
@@ -182,9 +186,7 @@ footer{
     opacity: 0.8;
     background: #ec7211;
   }
-  /*media queries css*/
 
-/* On screens that are 768px or less */
 @media screen and (max-width: 768px) {
     header{
         font-size: 11px;
@@ -211,7 +213,7 @@ footer{
         width: 38%;
     }
   }
-  @media (orientation:portrait) and (max-width:360px){
+  @media (max-width:360px){
     .header-title{
         padding-left: 5px;
     }
@@ -227,6 +229,10 @@ footer{
     }
     nav ul{
         margin:5px;
+    }
+    nav li{
+        display:inline;
+        padding-bottom: 10px;
     }
     .right-panel{
       width: 100%;

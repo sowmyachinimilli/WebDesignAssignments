@@ -2,6 +2,8 @@ Name: Satya Sri Sowmya Chinimilli
 NUID: 002102974
 
 This website is my professional portfolio consisting of various sections such as About, Education & Experience, Skills & Interests, Certificates and Contact pages.
+I've designed this portfolio to look a like the AWS console, which would help me while applying to Amazon/AWS.
+
 
 <!DOCTYPE> tag is the very first line in the HTML document. It tells the browser what version of HTML the document is written so that the browser knows what to expect. This tag is also commonly referred to as the <!DOCTYPE> element.
 
@@ -55,10 +57,14 @@ Important CSS used:
 
 * text-decoration: none; - Removes any type of text decoration, example: underline for text in anchor tags
 
-* a:hover - To add CSS specific to the tag when a cursor is hovered upon.
+* a:hover - To add CSS specific to the tag when a cursor is hovered upon
 
-* position: absolute; - Precisely specifies the location of an element outside of normal flow
-in in relation to its first parent non-static element
+* position: fixed; - The element stays even when the page is scrolled
+
+* display: none -  The element will not be displayed
+
+* tel:, mailto: - mobile browsers will initiate a phone call/send an email when the hyperlink is clicked
 
 * Media Queries
-
+Used CSS3 media queries to achieve responsive web design for screen resolutions: max-width: 768px and max-width: 360px
+CSS Media Queries - Directs the browser to styles configured specifically for those capabilities
