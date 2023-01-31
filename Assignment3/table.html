@@ -9,8 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	
 </head>
-<body>
+<body onload="hideDescRows()">
 	<table id="myTable">
+	<thead>
 		<tr>
 			<th></th>
 			<th>STUDENT</th>
@@ -21,9 +22,12 @@
 			<th>BUDGET<br />#</th>
 			<th>PERCENTAGE</th>
 			<th>DELETE</th>
+			<th>EDIT</th>
 		</tr>
-		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+	</thead>
+	<tbody>
+		<tr id="student1">
+			<td><input type="checkbox" onclick="selectRow(this,1)"/><br /><br /><img src="down.png" onclick="toggleDesc(1)"  width="25px"/></td>
 			<td>Student 1</td>
 			<td>Teacher 1</td>
 			<td>Approved</td>
@@ -31,9 +35,10 @@
 			<td>TA</td>
 			<td>12345</td>
 			<td>100%</td>
-			<td></td>
+			<td><button id="delete1" style="display:none" onclick="deleteRow(1)">DELETE</button></td>
+			<td><button id="edit1" style="display:none" onclick="editRow()">EDIT</button></td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="studentDesc1"><td colspan="10">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -42,8 +47,8 @@
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
 		</td></tr>
-		<tr bgcolor="orange">
-			<td><input type="checkbox" checked/><br /><br /><img src="down.png" width="25px" /></td>
+		<tr id="student3">
+			<td><input type="checkbox" onclick="selectRow(this,3)"/><br /><br /><img src="down.png" width="25px" onclick="toggleDesc(3)"/></td>
 			<td>Student 2</td>
 			<td>Teacher 2</td>
 			<td>Approved</td>
@@ -51,9 +56,10 @@
 			<td>TA</td>
 			<td>23456</td>
 			<td>100%</td>
-			<td><button>Delete</button></td>
+			<td><button id="delete3" style="display:none" onclick="deleteRow(3)">DELETE</button></td>
+			<td><button id="edit3" style="display:none"  onclick="editRow()">EDIT</button></td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="studentDesc3"><td colspan="10">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -62,8 +68,8 @@
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
 		</td></tr>
-		<tr>
-			<td><input type="checkbox" /><br /><br /><img src="down.png" width="25px" /></td>
+		<tr id="student5">
+			<td><input type="checkbox" onclick="selectRow(this,5)"/><br /><br /><img src="down.png" width="25px" onclick="toggleDesc(5)"/></td>
 			<td>Student 3</td>
 			<td>Teacher 3</td>
 			<td>Approved</td>
@@ -71,9 +77,10 @@
 			<td>TA</td>
 			<td>34567</td>
 			<td>100%</td>
-			<td></td>
+			<td><button id="delete5" style="display:none" onclick="deleteRow(5)">DELETE</button></td>
+			<td><button id="edit5" style="display:none" onclick="editRow()">EDIT</button></td>
 		</tr>
-		<tr class="dropDownTextArea"><td colspan="8">
+		<tr class="dropDownTextArea" id="studentDesc5"><td colspan="10">
 			Advisor:<br /><br />
 			Award Details<br />
 			Summer 1-2014(TA)<br />
@@ -82,12 +89,13 @@
 			Comments:<br /><br /><br />
 			Award Status:<br /><br /><br />
 		</td></tr>
+	</tbody>
 	</table>
 
 	<br /><br />
 	
-	<button id="button">SUBMIT SELECTED AWARDS</button>
-	<button id="add">Add New Student</button>
+	<button id="button" >SUBMIT SELECTED AWARDS</button>
+	<button id="add" onclick="addStudent()">Add New Student</button>
 
 	<nav class="socialmediaicons"></nav>
 	<script src="script.js"></script>
