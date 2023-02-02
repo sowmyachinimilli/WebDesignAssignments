@@ -18,31 +18,33 @@ var socialMedia = {
 var t = new Title("CONNECT WITH ME!");
 
 function hideDescRows()
-    {
+{
       var elements=document.getElementsByClassName("dropDownTextArea");
       for(var i=0;i<elements.length;i++)
       {
         var element=elements[i];
         element.style.display="none";
       }
-      document.getElementById("btnsubmit").disabled="true";
-      document.getElementById("btnsubmit").style.background="grey";
-    }
+      document.getElementById("button").disabled="true";
+      document.getElementById("button").style.background="grey";
+}
 
-    function addStudent(){
-      try{
+function addStudent(){
+  try{
       
       var table = document.getElementById("myTable");
-      var rowCount = document.querySelectorAll("table tr").length;//7 // 0,1,2,3,4,5,6
+      var rowCount = document.querySelectorAll("table tr").length;
+      console.log("rowcount: "+rowCount);
       var row = table.insertRow(rowCount);
-    // table.insertRow(7)  //8 // 0,1,2,3,4,5,6,7
+      console.log("row: "+row);
     row.setAttribute("id","student"+rowCount);
 
 
-      var rowCountToInsert = Math.floor(rowCount/2)+1;  // (rowCount+1)/2
-      //<input type="checkbox" /><br /><br /><img src="down.png" width="25px" />
+      var rowCountToInsert = Math.floor(rowCount/2)+1; 
+      console.log("rowcount o insert: "+rowCountToInsert);
       var cell1 = row.insertCell(0);  //1
         var element1 = document.createElement("input");  
+        element1.setAttribute("id","chkbox"+(rowCount));
         element1.type = "checkbox"; 
         element1.onclick = function() {  
             selectRow(this,rowCount);
@@ -59,7 +61,7 @@ function hideDescRows()
         {
           toggleDesc(rowCount);
         }      
-        cell1.appendChild(element14); //till here cell0
+        cell1.appendChild(element14);
 
         var cell2 = row.insertCell(1);  // 2
         var element2 = document.createElement("span");
@@ -117,11 +119,11 @@ function hideDescRows()
         }  
         cell10.appendChild(element10);
 
-        var row2 = table.insertRow(rowCount+1);  // table.insertRow(7)  //8 // 0,1,2,3,4,5,6,7
+        var row2 = table.insertRow(rowCount+1);  
         row2.setAttribute("class", "dropDownTextArea");
         row2.setAttribute("id","studentDesc"+rowCount);
         row2.style.display="none";
-        var cellRow21 = row2.insertCell(0);  // 2
+        var cellRow21 = row2.insertCell(0);  
         cellRow21.setAttribute("colspan", "10");
         var descCol = document.createElement("span");
         var data = "Advisor:<br /><br />"+
@@ -135,19 +137,20 @@ function hideDescRows()
         cellRow21.appendChild(descCol);
 
         alert("Student added successfully!");
-      }catch(err){
+  }catch(err){
       alert("error adding student");
-      }
-    }
-    function selectRow(element,id)
-    {
+  }
+}
+function selectRow(element,id)
+{
       var row=document.getElementById("student"+id);
       var isChecked=element.checked;
+      var isOthersChecked = checkOtherSelectedRows();
       if(isChecked)
       {
         row.style.background="yellow";
-        document.getElementById("btnsubmit").disabled=false;
-        document.getElementById("btnsubmit").style.background="orange";
+        document.getElementById("button").disabled=false;
+        document.getElementById("button").style.background="orange";
         document.getElementById("edit"+id).style.display="inline";
         document.getElementById("delete"+id).style.display="inline";
       }else
@@ -155,24 +158,31 @@ function hideDescRows()
         row.style.background="white"; 
         document.getElementById("edit"+id).style.display="none";
          document.getElementById("delete"+id).style.display="none";
-          document.getElementById("btnsubmit").disabled=true;
-          document.getElementById("btnsubmit").style.background="grey";
+         if(!isOthersChecked){
+          document.getElementById("button").disabled=true;
+          document.getElementById("button").style.background="grey";
+         }
       }
-     
-    }
-    function deleteRow(id)
-    {
+}
+function deleteRow(id)
+{
       document.getElementById("student"+id).style.display="none";
       document.getElementById("studentDesc"+id).style.display="none";
+      document.getElementById("chkbox"+id).checked = false;
+      var ipEle = document.getElementById("chkbox"+id);
+      selectRow(ipEle,id);
       alert("Deleted row successfully");
 
-    }
-    function editRow()
-    {
-      alert("Edit the details");
-    }
-    function toggleDesc(id)
-    {
+}
+function editRow(id)
+{
+    document.getElementById("chkbox"+id).checked = false;
+    var ipEle = document.getElementById("chkbox"+id);
+    selectRow(ipEle,id);
+    alert("Edit the details");
+}
+function toggleDesc(id)
+{
       var element=document.getElementById("studentDesc"+id);
       var isVisible=element.style.display;
       if(isVisible=="none")
@@ -182,4 +192,14 @@ function hideDescRows()
      {
       element.style.display="none";
      }
+}
+function checkOtherSelectedRows(){
+  var rowCount = document.querySelectorAll("table tr").length;
+  for(let j=1;j<rowCount;j=j+2){
+    var ipEle = document.getElementById("chkbox"+j);
+    if(ipEle.checked){
+      return true;
     }
+  }
+  return false;
+}
