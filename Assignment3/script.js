@@ -25,8 +25,8 @@ function hideDescRows()
         var element=elements[i];
         element.style.display="none";
       }
-      document.getElementById("button").disabled="true";
-      document.getElementById("button").style.background="grey";
+      document.getElementById("btnsubmit").disabled="true";
+      document.getElementById("btnsubmit").style.background="grey";
     }
 
     function addStudent(){
@@ -146,8 +146,8 @@ function hideDescRows()
       if(isChecked)
       {
         row.style.background="yellow";
-        document.getElementById("button").disabled=false;
-        document.getElementById("button").style.background="orange";
+        document.getElementById("btnsubmit").disabled=false;
+        document.getElementById("btnsubmit").style.background="orange";
         document.getElementById("edit"+id).style.display="inline";
         document.getElementById("delete"+id).style.display="inline";
       }else
@@ -155,8 +155,8 @@ function hideDescRows()
         row.style.background="white"; 
         document.getElementById("edit"+id).style.display="none";
          document.getElementById("delete"+id).style.display="none";
-          document.getElementById("button").disabled=true;
-          document.getElementById("button").style.background="grey";
+          document.getElementById("btnsubmit").disabled=true;
+          document.getElementById("btnsubmit").style.background="grey";
       }
      
     }
