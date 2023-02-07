@@ -23,70 +23,136 @@
 	 <h3>Love something? Hate something? Let us know!</h3>
 		 Note : Fields marked with an asterisk(*) are mandatory
 		 <br><br>
-		 <form method="post" novalidate>
+		 <form method="post" id="myForm" novalidate>
+
 			<label>Title*:</label>
-			<input type="radio" name="title" id="miss" value="miss" required="required"/>Miss
-			<input type="radio" name="title" id="mr" value="mr" required="required"/>Mr.
-			<input type="radio" name="title" id="mrs" value="mrs" required="required"/>Mrs.
+			<input type="radio" name="title" id="miss" value="miss" required="required" onblur="checkTitle()"/>Miss
+			<input type="radio" name="title" id="mr" value="mr" required="required" onblur="checkTitle()"/>Mr.
+			<input type="radio" name="title" id="mrs" value="mrs" required="required" onblur="checkTitle()"/>Mrs.
 			<br><br>
+			<div id="error_title" style="display: none; color: red;">
+				Please choose a title
+				<br><br>
+			</div>
+
 			<label for="firstName">First Name*:</label>
-			<input type="text" name="firstName" id="firstName" placeholder="First Name" />	
+			<input type="text" class="validation" name="firstName" id="firstName" placeholder="First Name" required
+			onblur="validateInputs(this,'firstName','error_firstName')"
+			onfocus="removeDivs(this,'error_firstName')" />	
 			<br><br>
-			
+			<div id="error_firstName" class="validationDiv" style="display: none; color: red;">
+				Invalid input for the first name. Only text is allowed.
+				<br><br>
+			</div>
 
 			<label for="lastName">Last Name*:</label>
-			<input type="text" name="lastName" id="lastName" placeholder="Last Name" />
+			<input type="text" class="validation" name="lastName" id="lastName" placeholder="Last Name" required
+			onblur="validateInputs(this,'lastName','error_lastName')"
+			onfocus="removeDivs(this,'error_lastName')"/>
 			<br><br>
-			
+			<div id="error_lastName" class="validationDiv" style="display: none; color: red;">
+				Invalid input for the last name. Only text is allowed.
+				<br><br>
+			</div>
 
 			<label for="emailId">Email Id*:</label>
-			<input type="text" name="emailId" id="emailId" placeholder="yourname@domain.com" />
+			<input type="text" class="validation" name="emailId" id="emailId" placeholder="username@northeastern.edu" required
+			onblur="validateInputs(this,'emailId','error_emailId')"
+			onfocus="removeDivs(this,'error_emailId')"/>
 			<br><br>
+			<div id="error_emailId" class="validationDiv" style="display: none; color: red;">
+				Invalid input for the email address. Please enter your only Northeastern email address
+				<br><br>
+			</div>
 			
 
 			<label for="phoneNumber">Phone Number*:</label>
-			<input type="text" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" />
+			<input type="text" class="validation" name="phoneNumber" id="phoneNumber" placeholder="xxx-xxx-xxxx" required
+			onblur="validateInputs(this,'phoneNumber','error_phoneNumber')"
+			onfocus="removeDivs(this,'error_phoneNumber')"/>
 			<br><br>
+			<div id="error_phoneNumber" class="validationDiv" style="display: none; color: red;">
+				Invalid input for the phone number. Please enter a valid phone number
+				<br><br>
+			</div>
 
 			<label for="streetAddress1">Street Address 1*:</label>
-			<input type="text" name="streetAddress1" id="streetAddress1" placeholder="address" />
+			<input type="text" class="validation" name="streetAddress1" id="streetAddress1" placeholder="address" required
+			onblur="validateInputs(this,'streetAddress1','error_streetAddress1')"
+			onfocus="removeDivs(this,'error_streetAddress1')"/>
 			<br><br>
+			<div id="error_streetAddress1" class="validationDiv" style="display: none; color: red;">
+				Please enter a valid street address
+				<br><br>
+			</div>
 
 			<label for="streetAddress2">Street Address 2:</label>
 			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
 			<br><br>
 
 			<label for="city">City*:</label>
-			<input type="text" name="city" id="city" placeholder="city" />
+			<input type="text" class="validation" name="city" id="city" placeholder="city" required
+			onblur="validateInputs(this,'city','error_city')"
+			onfocus="removeDivs(this,'error_city')" />
 			<br><br>
+			<div id="error_city" class="validationDiv" style="display: none; color: red;">
+				Please enter a valid city name
+				<br><br>
+			</div>
 
 			<label for="state">State*:</label>
-			<input type="text" name="state" id="state" placeholder="state" />
+			<input type="text" class="validation" name="state" id="state" placeholder="state" required
+			onblur="validateInputs(this,'state','error_state')"
+			onfocus="removeDivs(this,'error_state')"/>
 			<br><br>
+			<div id="error_state" class="validationDiv" style="display: none; color: red;">
+				Please enter a valid state name
+				<br><br>
+			</div>
 			
             <label for="zipcode">ZipCode*:</label>
-			<input type="text" name="zipcode" id="zipcode" placeholder="xxxxxx" />
+			<input type="text" class="validation" name="zipcode" id="zipcode" placeholder="xxxxxx" required
+			onblur="validateInputs(this,'zipcode','error_zipcode')"
+			onfocus="removeDivs(this,'error_zipcode')"/>
 			<br><br>
+			<div id="error_zipcode" class="validationDiv" style="display: none; color: red;">
+				Please enter a valid zip code
+				<br><br>
+			</div>
+
+			<label></label>
              
-            <label for="zipcode">How did you hear*:</label>
-			<input type='checkbox' name="source" value="facebook" /> Facebook
-            <input type='checkbox' name="source" value="google" /> Google
-            <input type='checkbox' name="source" value="yelp" /> Yelp 
+            <label for="howdidyouhear">How did you hear*:</label>
+			<input type='checkbox' name="source" value="facebook" onblur="validateHduh()"
+			onfocus="removeDivs(this,'error_hduh')"/> Facebook
+            <input type='checkbox' name="source" value="google" onblur="validateHduh()"
+			onfocus="removeDivs(this,'error_hduh')"/> Google
+            <input type='checkbox' name="source" value="yelp" onblur="validateHduh()"
+			onfocus="removeDivs(this,'error_hduh')"/> Yelp 
 			<br><br> 
+			<div id="error_hduh" style="display: none; color: red;">
+				Please do let us know how did you hear about us
+				<br><br>
+			</div>
              
 			<label for="comments">Comments*:</label>
-			<textarea name="text" id="comments" placeholder="Your comments" rows="5" cols="25"></textarea>
+			<textarea name="comments" class="validation" id="comments" placeholder="Your comments" rows="5" cols="25"
+			onblur="validateInputs(this,'comments','error_comments')"
+			onfocus="removeDivs(this,'error_comments')"></textarea>
 			<br><br>
-			<input type="Submit">
-			<input type="Reset">
+			<div id="error_comments" class="validationDiv" style="display: none; color: red;">
+				Please enter valid comments
+				<br><br>
+			</div>
+
+			<input type="button" value="Submit" onclick="submitForm()">
+			<input type="Reset" onclick="clearDivs()">
 			<br><br>
 		 </form>
 	 </main>
  </div>
 
- <script>
- 
- </script>
+ <script src="myscript.js"></script>
 
  </body>
 </html>
