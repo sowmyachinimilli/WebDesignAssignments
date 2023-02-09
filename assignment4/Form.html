@@ -7,7 +7,9 @@
 			float: left;
 			width: 150px;
 		}
-
+		#fl01val{
+			height: 18.5px;
+		}
 		#container {
 			width: 1200;
 			margin: auto;
@@ -106,7 +108,7 @@
 			</div>
 
 			<label for="streetAddress1">Street Address 1*:</label>
-			<input type="text" class="validation" name="streetAddress1" id="streetAddress1" placeholder="address" required
+			<input type="text" class="validation" name="streetAddress1" id="streetAddress1" placeholder="xxx streetname" required
 			onblur="validateInputs(this,'streetAddress1','error_streetAddress1')"
 			onfocus="removeDivs(this,'error_streetAddress1')"/>
 			<br><br>
@@ -116,7 +118,7 @@
 			</div>
 
 			<label for="streetAddress2">Street Address 2:</label>
-			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="address" />
+			<input type="text" name="streetAddress2" id="streetAddress2" placeholder="apt" />
 			<br><br>
 
 			<label for="city">City*:</label>
@@ -149,8 +151,37 @@
 				<br><br>
 			</div>
 
-			<label></label>
-             
+			<label for="drinktype">Drinks:</label>
+				<select name="drink" id="drinkType" onchange="chooseFlavor()">
+					<option value="selectdrink">--select your drink--</option>
+					<option value="milktea">Milktea</option>
+					<option value="tea">Tea</option>
+					<option value="coffee">Coffee</option>
+					<option value="frapuccino">Frapuccino</option>
+					<option value="latte">Latte</option>
+				</select>
+			<br /><br />
+			<div style="display: none;" id="flavor">
+				<label for="flavor">Flavors:</label>
+				<div>
+				<label for="fl01val" id="fl01val"> </label>
+				</div>
+				<br><br>
+			</div>
+
+			<div style="display: none;" id="customDiv">
+				<label for="custom">Customization*:</label>
+				<input type="text" name="custom" id="custom" 
+					placeholder="Enter your customization" required="required"
+					onblur="validateInputs(this,'custom','error_custom')"
+					onfocus="removeDivs(this,'error_custom')" />
+				<br><br>
+			</div>
+			<div id="error_custom" style="display: none; color: red;">
+				Please do add your customization or leave NA if you don't have any
+				<br><br>
+			</div>
+
             <label for="howdidyouhear">How did you hear*:</label>
 			<input type='checkbox' name="source" value="facebook" onblur="validateHduh()"
 			onfocus="removeDivs(this,'error_hduh')"/> Facebook
@@ -192,9 +223,9 @@
 				<th>City</th>
 				<th>State</th>
 				<th>Zip Code</th>
-				<!-- <th>Item Ordered</th>
-				<th>Size</th>
-				<th>Color</th> -->
+				<th>Drink Ordered</th>
+				<th>Falvor</th>
+				<th>Customization</th>
 				<th>How did you hear</th>
 				<th>Comments</th>
 			</tr>

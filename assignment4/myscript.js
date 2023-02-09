@@ -1,6 +1,6 @@
 //Function to validate all the fields in the form and generate error messages accordingly
 var validationFailed = [];
-var ratingFieldCreated = false;
+var customFieldCreated = false;
 var fromInside = false;
 
 //Function to validate Title
@@ -34,6 +34,7 @@ function validateInputs(object, regCase, divId) {
     var regExState = /^(([Aa][EeLlKkSsZzRr])|([Cc][AaOoTt])|([Dd][EeCc])|([Ff][MmLl])|([Gg][AaUu])|([Hh][Ii])|([Ii][DdLlNnAa])|([Kk][SsYy])|([Ll][Aa])|([Mm][EeHhDdAaIiNnSsOoTt])|([Nn][EeVvHhJjMmYyCcDd])|([Mm][Pp])|([Oo][HhKkRr])|([Pp][WwAaRr])|([Rr][Ii])|([Ss][CcDd])|([Tt][NnXx])|([Uu][Tt])|([Vv][TtIiAa])|([Ww][AaVvIiYy]))$/;
     var regExZipCode = /^[0-9]{5}(?:-[0-9]{4})?$/;
     var regExComments = /^[a-zA-Z0-9@=\-'"]+/;
+    var regExCustom = /[a-zA-Z]/;
 
     var regToVal;
 
@@ -62,6 +63,9 @@ function validateInputs(object, regCase, divId) {
             break;
         case "comments":
             regToVal = regExComments;
+            break;
+        case "custom":
+            regToVal = regExCustom;
             break;
     }
 
@@ -125,6 +129,9 @@ function clearDivs(){
     }
     document.getElementById("error_title").style.display = "none";
     document.getElementById("error_hduh").style.display = "none";
+    document.getElementById("flavor").style.display="none";
+    document.getElementById("customDiv").style.display="none";
+    document.getElementById("error_custom").style.display="none";
 }
 
 function formValidation(){
@@ -189,9 +196,9 @@ function submitForm() {
         "city": document.getElementById('city').value,
         "state": document.getElementById('state').value,
         "zipcode": document.getElementById('zipcode').value,
-        //"dishType": dishType.options[dishType.selectedIndex].text,
-        //"type": getCheckboxValues("service"),
-        //"rating": document.getElementById('rating').value,
+        "drinkType": drinkType.options[drinkType.selectedIndex].text,
+        "type": getCheckboxValues("flavor"),
+        "custom": document.getElementById('custom').value,
         "hduh": getCheckboxValues("source"),
         "comments": document.getElementById('comments').value,
     }
@@ -213,9 +220,9 @@ function submitForm() {
     var cell10 = row.insertCell();
     var cell11 = row.insertCell();
     var cell12 = row.insertCell();
-    // var cell13 = row.insertCell();
-    // var cell14 = row.insertCell();
-    // var cell15 = row.insertCell();
+    var cell13 = row.insertCell();
+    var cell14 = row.insertCell();
+    var cell15 = row.insertCell();
 
     console.log("before assigning data");
 
@@ -229,18 +236,88 @@ function submitForm() {
     cell8.innerHTML = data.city;
     cell9.innerHTML = data.state;
     cell10.innerHTML = data.zipcode;
-    // cell11.innerHTML = data.dishType;
-    // cell12.innerHTML = data.type;
-    // cell13.innerHTML = data.rating;
-    cell11.innerHTML = data.hduh;
-    cell12.innerHTML = data.comments;
+    cell11.innerHTML = data.drinkType;
+    cell12.innerHTML = data.type;
+    cell13.innerHTML = data.custom;
+    cell14.innerHTML = data.hduh;
+    cell15.innerHTML = data.comments;
 
     console.log("before appending data");
 
     tab.appendChild(row);
 
     $('#myForm')[0].reset();
+    document.getElementById("flavor").style.display="none";
+    document.getElementById("customDiv").style.display="none";
 
     return false;
 
+}
+
+//Function to change values of checkboxes dynamically
+function chooseFlavor() {
+    document.getElementById("flavor").style.display="block";
+    var varListVal = document.getElementById("drinkType").value;
+    switch (varListVal) {
+        case "selectdrink":
+            document.getElementById("flavor").style.display="none";
+            break
+        case "milktea":
+            document.getElementById("fl01val").innerHTML = "<input type='checkbox' name='flavor' id='fl01' value='Rose' onclick='serviceCheck()' />Rose<br><br>";
+            break
+        case "tea":
+            console.log("inside tead");
+            document.getElementById("fl01val").innerHTML = "<input type='checkbox' name='flavor' id='fl01' value='Green' onclick='serviceCheck()' />Green Tea<br><br>";
+            break
+        case "coffee":
+            document.getElementById("fl01val").innerHTML = "<input type='checkbox' name='flavor' id='fl01' value='Light' onclick='serviceCheck()' />Light Roasted<br><br>";
+            break
+        case "frapuccino":
+            document.getElementById("fl01val").innerHTML = "<input type='checkbox' name='flavor' id='fl02' value='Caramel' onclick='serviceCheck()' />Caramel Ribbon<br><br>";
+            break
+        case "latte":
+            document.getElementById("fl01val").innerHTML = "<input type='checkbox' name='flavor' id='fl01' value='Pumpkin' onclick='serviceCheck()' />Pumpkin Spice<br><br>";
+            break
+    }
+    serviceCheck();
+}
+
+//Function to check if any checkboxes are checked and generate text field accordingly
+function serviceCheck() {
+    var srvChks = document.getElementsByName("flavor");
+    var ttlServChks = 0;
+    for (var i = 0, len = srvChks.length; i < len; i++) {
+        if (srvChks[i].checked) {
+            ttlServChks++;
+        }
+    }
+    if (ttlServChks > 0) {
+        createCustomField();
+        customFieldCreated = true;
+    }
+    else {
+        disableCustomField();
+        customFieldCreated = false;
+    }
+}
+
+//Functiom to Create/Generate custom Text Field Dynamically
+function createCustomField() {
+    let ctDiv = document.getElementById("customDiv");
+    ctDiv.style.display = "block";
+    if(!fromInside){
+    let txtFld = document.getElementById("custom");
+    txtFld.style.border = "";
+    txtFld.value = "";
+    }
+    fromInside = false;
+}
+
+//Functiom to Hide/Disable custom Text Field Dynamically
+function disableCustomField() {
+    let ctDiv = document.getElementById("customDiv");
+    ctDiv.style.display = "none";
+    let ctErrDiv = document.getElementById("error_custom");
+    ctErrDiv.style.display = "none";
+    ctErrDiv.value = "";
 }
