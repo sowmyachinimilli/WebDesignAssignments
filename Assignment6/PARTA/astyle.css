@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    background-repeat: no-repeat;
+}
+.div_form{
+    background-image: url('./images/calcs.jpg');
+    padding: 10%;
+    margin: 10%;
+    margin-top: 5px;
+}
+.div_form form{
+    padding-left:160px;
+}
+.div_form input
+{
+	padding: 12px;
+	margin-bottom: 30px;
+	width: 55%;
+	box-sizing: border-box;
+	box-shadow: none;
+	outline: none;
+	border:none;
+	border-bottom: 2px solid #999;
+    font-size: 16px;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color:darkorange;
+}
+.btn:hover{
+    background-color: rgb(220, 123, 5);
+}
+.error_form
+{
+	top: 2px;
+	/* color: rgb(216, 15, 15); */
+    color: red;
+    font-size: 15px;
+    text-shadow: 1px 1px 1px black;
+}

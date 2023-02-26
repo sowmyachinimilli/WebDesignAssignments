@@ -4,9 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="astyle.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Register</h1>
+            <div class="div_form">
+            <form id="registration_form">
+                <div>
+                    <input type="email" id="form_email" name="" required="" placeholder="Email address">
+                    <span class="error_form" id="email_error_message"></span>
+                </div>
+                <div>
+                    <input type="text" id="form_uname" name="username" required="" placeholder="Username">
+                    <span class="error_form" id="uname_error_message"></span>
+                </div>
+                <div>
+                    <input type="password" id="form_password" name="" required="" placeholder="Password">
+                    <span class="error_form" id="password_error_message"></span>
+                </div>
+                <input class="btn" type="submit" id="sbmt" value="Register" name="">
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+  
+           $("#uname_error_message").hide();
+           $("#email_error_message").hide();
+           $("#password_error_message").hide();
+  
+           var error_uname = false;
+           var error_email = false;
+           var error_password = false;
+  
+           $("#form_uname").focusout(function () {
+              check_uname();
+           });
+           $("#form_email").focusout(function () {
+              check_email();
+           });
+           $("#form_password").focusout(function () {
+              check_password();
+           });
+  
+           function check_uname() {
+              var pattern = /^[a-zA-Z]*$/;
+              var fname = $("#form_uname").val();
+              if (pattern.test(fname) && fname !== '') {
+                 $("#uname_error_message").hide();
+                 $("#form_uname").css("border-bottom", "2px solid #34F458");
+              } else {
+                 $("#uname_error_message").html("Username should contain only alphabets");
+                 $("#uname_error_message").show();
+                 $("#form_uname").css("border-bottom", "2px solid #F90A0A");
+                 error_uname = true;
+              }
+           }
+  
+  
+  
+           function check_password() {
+              var password_length = $("#form_password").val().length;
+              if (password_length < 8) {
+                 $("#password_error_message").html("Require atleast 8 characters");
+                 $("#password_error_message").show();
+                 $("#form_password").css("border-bottom", "2px solid #F90A0A");
+                 error_password = true;
+              } else {
+                 $("#password_error_message").hide();
+                 $("#form_password").css("border-bottom", "2px solid #34F458");
+              }
+           }
+  
+  
+  
+           function check_email() {
+              var pattern = /^[a-zA-Z0-9._%+-]+@northeastern+\.edu$/;
+              var email = $("#form_email").val();
+              if (pattern.test(email) && email !== '') {
+                 $("#email_error_message").hide();
+                 $("#form_email").css("border-bottom", "2px solid #34F458");
+              } else {
+                 $("#email_error_message").html("Enter a valid Northeastern email ID");
+                 $("#email_error_message").show();
+                 $("#form_email").css("border-bottom", "2px solid #F90A0A");
+                 error_email = true;
+              }
+           }
+  
+           $("#registration_form").submit(function () {
+              error_uname = false;
+              error_email = false;
+              error_password = false;
+  
+              check_uname();
+              check_email();
+              check_password();
+  
+              if (error_uname === false && error_email === false && error_password === false) {
+                 alert("Registration successfull");
+                 var uname = $("#form_uname").val();
+                 window.sessionStorage.setItem("username", uname);
+                 var url = "calc.html";
+                 $(location).attr('href', url);
+                 window.location.href = url;
+                 return false;
+              }
+              else {
+                 alert("Please fill the missing fields in the form correctly");
+              }
+           });
+        });
+     </script>
 </body>
 </html>
