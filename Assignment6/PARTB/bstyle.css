@@ -1,0 +1,40 @@
+body{
+    background-color: black;
+    color: darkorange;
+    margin-left:40%;
+    margin-top: 10%;
+}
+h1,h2,h3{
+    color: white;
+    display: inline-block;
+}
+h2{
+    padding-left: 5px;
+}
+#title{
+    padding-left: 20px;
+    color: darkorange;
+    font-size:48px;
+}
+.time{
+    padding-left: 40px;
+}
+#hour,#min,#sec{
+    padding-left: 12px;
+}
+.btns-timer{
+    margin-left: -15px;
+}
+.btn{
+    width: 100px;
+    font-size: 1.5em;
+    height: 50px;
+    color: white;
+    background-color:darkcyan;
+}
+.btn:disabled {
+    background-color:rgb(37, 80, 80);
+}
+.btn:hover,#stopBtn:focus{
+    background-color:rgb(16, 106, 106);
+}
