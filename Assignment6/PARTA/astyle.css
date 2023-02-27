@@ -1,6 +1,7 @@
 body{
     background-color: black;
     background-repeat: no-repeat;
+    color: white;
 }
 .div_form{
     background-image: url('./images/calcs.jpg');
@@ -41,4 +42,29 @@ body{
     color: red;
     font-size: 15px;
     text-shadow: 1px 1px 1px black;
+}
+#a,#b,#result{
+    padding: 12px;
+	margin-bottom: 30px;
+	width: 300px;
+	box-sizing: border-box;
+	border-bottom: 2px solid #999;
+    font-size: 16px;
+}
+#a,#b{
+    color: white;
+    font-weight: bold;
+    background-color: #0D4C92;
+}
+.btn-math{
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color:darkorange;
+}
+#result{
+    color: black;
+    background-color: #59C1BD;
 }
