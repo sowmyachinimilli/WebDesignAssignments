@@ -4,9 +4,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta charset="windows-1252">
     <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h3 id="welcomeUser"></h3>
+    </header>
+    <div id="container1">
+        <h1>My Calculator</h1>
+        
+        <input type="text" id="a" placeholder="Enter your first input"
+         onblur="validateInputs(this, 1, 'in1')" />
+        <br>
+        <div id="errorMsgin1" style="display: none; color:red;">
+            Invalid input! Please enter only numbers.
+            <br> <br>
+        </div>
+        <br><br>
+        
+        <input type="text" id="b" placeholder="Enter your second input"
+        onblur="validateInputs(this, 2, 'in2')" />
+        <div id="errorMsgin2" style="display: none; color:red;">
+            Invalid input! Please enter only numbers.
+            <br> <br>
+        </div>
+        <br><br>
+
+        <input id="btnAdd" type="button" value="Add">
+        <input id="btnSubtract" type="button" value="Subtract">
+        <input id="btnMultiply" type="button" value="Multiply">
+        <input id="btnDivide" type="button" value="Divide">
+
+        <br><br>
+        <label>Result:</label>
+        <input type="text" disabled="disabled" id="result">
+    </div>
+    <script>
+    $(document).ready(function () {
+        var username = window.sessionStorage.getItem("username");
+        console.log(username);
+        $("#welcomeUser").html("Welcome, " + sessionStorage.getItem("username")+"!"); 
+
+        $("#btnAdd").on("click", function () {
+            var a = parseInt($('#a').val());
+            var b = parseInt($('#b').val());
+            var sum = (a, b) => (a + b);
+            $("#result").val(a + b);
+        });
+
+        $("#btnSubtract").on("click", function () {
+            var a = parseInt($('#a').val());
+            var b = parseInt($('#b').val());
+            var sum = (a, b) => (a - b);
+            $("#result").val(a - b);
+        });
+
+        $("#btnMultiply").on("click", function () {
+            var a = parseInt($('#a').val());
+            var b = parseInt($('#b').val());
+            var sum = (a, b) => (a * b);
+            $("#result").val(a * b);
+        });
+
+        $("#btnDivide").on("click", function () {
+            var a = parseInt($('#a').val());
+            var b = parseInt($('#b').val());
+            var sum = (a, b) => (a / b);
+            $("#result").val(a / b);
+        });
+    });
+
+    function validateInputs(object, type, nameType) {
+        var pattern = /^[0-9]+$/;
+        var name = "errorMsg" + nameType;
+        switch (type) {
+            case 1:
+                if (!object.value.trim().match(pattern)) {
+                    object.style.border = "2px solid #F90A0A";
+                    document.getElementById(name).style.display = "block";
+                    object.value = "";
+                }
+                else {
+                    object.style.border = "";
+                    document.getElementById(name).style.display = "none";
+                }
+                break;
+
+            case 2:
+                if (!object.value.trim().match(pattern)) {
+                    object.style.border = "2px solid red";
+                    document.getElementById(name).style.display = "block";
+                    object.value = "";
+                }
+                else {
+                    object.style.border = "";
+                    document.getElementById(name).style.display = "none";
+                }
+                break;
+        }
+    }
+</script>
 </body>
 </html>
