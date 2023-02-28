@@ -1,0 +1,111 @@
+.form-group{
+    margin-bottom: 20px;
+}
+.list-unstyled{
+  float:left;
+  width: 25%;
+  padding: 2px;
+  text-align: left;
+}
+
+/* Clear floats after image containers */
+.col-md-3 mb-md-0 mb-3::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.container,.row{
+    text-align: center;
+}
+.card{
+    margin-left: 50px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+.card img{
+    padding: 10px;
+    margin-left: 25px;
+    width: 170px;
+    height: 200px;
+}
+.card-img{
+    background-color:#f6f7f2;
+}
+.addToCart{
+    border:1px solid #af0006;
+    color: #af0006;
+    background-color: white;
+    border-radius: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding: 7px 15px;
+}
+.addToCart:hover{
+    border:2px solid #af0006;
+    background-color: #f6f7f2;
+    box-shadow: 3px 3px lightgrey;
+}
+.text-center{
+    text-align: center;
+}
+.pagination ul{
+    text-align: center;
+}
+.pagination li{
+    padding: 10px;
+}
+.pagination li a{
+    text-decoration: none;
+    color: black;
+}
+.pagination li a:hover{
+    color: #af0006;
+}
+.pagination li a:active,.pagination li a:focus{
+    text-decoration: underline;
+    color: #af0006;
+}
+.pagination-section{
+    padding-left: 43%;
+    font-size: large;
+}
+.section-heading{
+    color:#af0006;
+    font-weight: bolder;
+    text-shadow: 3px 3px lightgrey;
+}
+h5{
+    
+    text-align: left;
+    color:#af0006;
+    font-weight: bolder;
+    text-shadow: 3px 3px lightgrey;
+}
+.footer-copyright{
+   float: right;
+   text-align:center;
+}
+.navbar-brand{
+    font-family: 'Brush Script MT';
+    font-size: xx-large;
+}
+.carousel-item img{
+    width: 1200px;
+    height: 800px;
+}
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bs-primary);
+  }
+#offer-img{
+    width: 350px;
+    height: 300px;
+}
+#offers-section{
+    background-color: #f6f7f2;
+}
+#ratings-section{
+    background-color: lightgrey;
+}
+#reach{
+    text-align: right;
+}
