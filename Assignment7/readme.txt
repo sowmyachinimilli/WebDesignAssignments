@@ -38,4 +38,4 @@ It looks and acts a lot like a class selector, but it starts with a % and it's n
 Used a set a constant font-size overall the website.
 
 Custom Properties: 
-The custom properties includes color e.t.c
+The custom properties includes color etc.

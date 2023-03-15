@@ -11,10 +11,15 @@
 <body>
     <header>
         <h1 class="text-blue">Baskin Robbins</h1>
+        <button class="btn-mode">Switch Mode</button>
     </header>
     <form action="index.html" class="activation-form">
         <input type="text" placeholder="Enter your email address" name="txt-email" class="txt-email" required>
         <button type="submit" class="btn-activation">Send Account Activation Link</button>
     </form>
+    <script>
+        const toggleBtn = document.querySelector('.btn-mode');
+        toggleBtn.addEventListener('click', () => document.body.classList.toggle('dark-theme'));
+    </script>
 </body>
 </html>
