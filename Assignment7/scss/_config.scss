@@ -1,0 +1,20 @@
+@import 'variables';
+@function set-text-color($color){
+    @if(lightness($color)>70){
+        @return black;
+    }
+    @else{
+        @return white;
+    }
+}
+@mixin set-bg($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
+
+ /* using interpolation */
+@mixin image-icon($name) {
+    .icon-#{$name} {
+      content: url("/images/#{$name}.jpg");
+    }
+}

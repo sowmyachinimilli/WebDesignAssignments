@@ -1,0 +1,143 @@
+.btn-register {
+  background-color: #e21380;
+  color: white;
+  font-weight: bold;
+  height: 30px;
+}
+.btn-register:hover {
+  box-shadow: 2px 2px rgb(114, 121, 152);
+}
+
+.btn-activation {
+  background-color: #e21380;
+  color: white;
+  font-weight: bold;
+  height: 30px;
+  margin-left: 5px;
+}
+.btn-activation:hover {
+  box-shadow: 2px 2px rgb(114, 121, 152);
+}
+
+.btn-mode {
+  margin: 25px;
+  margin-left: 50%;
+  background-color: rgb(0, 28, 152);
+  color: white;
+  font-weight: bold;
+  height: 30px;
+}
+.btn-mode:hover {
+  box-shadow: 2px 2px rgb(170, 179, 224);
+}
+
+/* using interpolation */
+body {
+  background-color: white;
+  color: black;
+}
+body.dark-theme {
+  background-color: black;
+  color: white;
+}
+body header {
+  text-align: center;
+  background-color: #e21380;
+  display: flex;
+  flex: 10%;
+  height: 15;
+  text-shadow: 1px -1px lightgray;
+  padding-left: 43%;
+  margin: -10px;
+}
+body .gallery-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+body .gallery-container .gallery {
+  justify-items: center;
+  padding: 20px;
+  margin: 20px;
+}
+body .gallery-container .gallery img {
+  width: 300px;
+  height: 200px;
+}
+body .gallery-container .gallery:hover {
+  cursor: pointer;
+  box-shadow: 9px 9px rgb(72, 86, 152);
+  border: 1px solid #e21380;
+}
+body a .icon-vanilla {
+  content: url("/images/vanilla.jpg");
+}
+body a .icon-mango {
+  content: url("/images/mango.jpg");
+}
+body a .icon-caramel {
+  content: url("/images/caramel.jpg");
+}
+body a .icon-chocochip {
+  content: url("/images/chocochip.jpg");
+}
+body a .icon-cottoncandy {
+  content: url("/images/cottoncandy.jpg");
+}
+body a .icon-fruit {
+  content: url("/images/fruit.jpg");
+}
+body a .icon-rainbow {
+  content: url("/images/rainbow.jpg");
+}
+body a .icon-veganvanilla {
+  content: url("/images/veganvanilla.jpg");
+}
+body a img {
+  width: 300px;
+  height: 200px;
+}
+body h2 {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px grey;
+  padding-left: 20px;
+}
+body .text-pink {
+  color: #e21380;
+}
+body .text-blue {
+  color: rgb(0, 28, 152);
+}
+body .register-section {
+  float: right;
+  margin: 15px;
+  padding: 15px;
+}
+body .register-form {
+  font-size: 20px;
+}
+body .txt-email {
+  width: 350px;
+  height: 30px;
+  border: 2px solid #e21380;
+  border-radius: 3px;
+  font-size: 16px;
+}
+body .activation-form {
+  margin: 70px;
+  padding: 10%;
+  padding-left: 25%;
+}
+body .flex-container {
+  display: flex;
+  flex-direction: row;
+}
+body .flex-container > div {
+  margin: 5px;
+  padding: 10px;
+  background-color: #e21380;
+  color: white;
+}
+body .flex-container > div h2 {
+  text-shadow: 1px -1px 1px lightgray;
+}/*# sourceMappingURL=style.css.map */

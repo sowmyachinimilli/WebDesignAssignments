@@ -1,0 +1,102 @@
+@import 'variables';
+@import 'button';
+@import 'config';
+@import 'theme';
+%font-size {
+    font-size: 2.5rem;
+}
+body{
+    @include set-bg($light-color);
+    &.dark-theme{
+        @include check-bg($dark-color);
+    }
+    header{
+        text-align: center;
+        background-color: $primary-color;
+        display: flex;
+        flex: 10%;
+        height: 15;
+        text-shadow: 1px -1px lightgray;
+        padding-left: 43%;
+        margin: -10px;
+    }
+    .gallery-container{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: auto auto;
+        .gallery{
+            justify-items: center;
+            padding: 20px;
+            margin: 20px;
+            
+        }
+        .gallery img{
+            width: 300px;
+            height: 200px;
+        }
+        .gallery:hover{
+            cursor: pointer;
+            box-shadow: 9px 9px rgb(72, 86, 152);
+            border: 1px solid $primary-color;
+        }
+    }
+    a{
+        @include image-icon("vanilla");
+        @include image-icon("mango");
+        @include image-icon("caramel");
+        @include image-icon("chocochip");
+        @include image-icon("cottoncandy");
+        @include image-icon("fruit");
+        @include image-icon("rainbow");
+        @include image-icon("veganvanilla");
+
+        img{
+            width: 300px;
+            height: 200px;
+        }
+    }
+    h2{
+        font-weight: bold;
+        text-shadow: 1px 1px 1px grey;
+        padding-left: 20px;
+    }
+    .text-pink{
+        color: $primary-color;
+    }
+    .text-blue{
+        color: $secondary-color;
+    }
+    .register-section{
+        float: right;
+        margin: 15px;
+        padding: 15px;
+    }
+    .register-form{
+        font-size: 20px;
+    }
+    .txt-email{
+        width: 350px;
+        height: 30px;
+        border: 2px solid $primary-color;
+        border-radius: 3px;
+        font-size: 16px;
+    }
+    .activation-form{
+        margin: 70px;
+        padding: 10%;
+        padding-left: 25%;
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: row;
+        >div{
+            h2{
+                text-shadow: 1px -1px 1px lightgray;
+            }
+            margin: 5px;
+            padding: 10px;
+            background-color:$primary-color;
+            color: white;
+        }
+    }
+}
