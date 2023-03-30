@@ -1,0 +1,32 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .txt-uname,.txt-pwd {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  .btn-login {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #20608a;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn-login:hover {
+    background-color: #073b5d;
+  }
